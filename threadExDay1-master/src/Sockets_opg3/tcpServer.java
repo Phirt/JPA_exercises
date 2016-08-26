@@ -33,16 +33,15 @@ public class tcpServer {
             PrintWriter prnt = new PrintWriter(s.getOutputStream(), true);
             String msg = "";
             prnt.println("Hello World!");
-            while(!msg.equals("STOP"));
+            while(!msg.equals("STOP"))
             {
                 msg = scn.nextLine();
-                prnt.println(msg.toUpperCase());
                 
                 if (msg.contains("UPPER#")) {
                     String[] parts = msg.split("#");
                     prnt.println(parts[1].toUpperCase());
                 }
-                if (msg.contains("LOWER.#")) {
+                if (msg.contains("LOWER#")) {
                     String[] parts = msg.split("#");
                     prnt.println(parts[1].toLowerCase());
                 }
